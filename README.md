@@ -58,31 +58,54 @@ RegisterNumber:  22008695
 UP COUNTER
 
 module uc(input CLK,input reset,output[0:3]counter);
+
 reg[0:3] counter_up;
+
 always@(posedge CLKor posedge reset)
+
 begin
+
 if(reset)
+
 counter_up<=4'd0;
+
 else
+
 counter_up<=counter_up+4'd1;
+
 end
+
 assign counter=counter_up;
+
 endmodule
+
 
 DOWN COUNTER
 
 module dc(input CLKinput reset,output[0:3]counter);
+
 reg[0:3] counter_down;
+
 always@(posedge  CLK or posedge reset)
+
 begin
+
 if(reset)
+
 counter_down<=4'd0;
+
 else
+
 counter_down<=counter_down-4'd1;
+
 end
+
 assign counter=counter_down;
+
 endmodule
+
 RTL LOGIC UP COUNTER AND DOWN COUNTER:
+
 UP COUNTER
 
 ![UP Counter rtl](https://user-images.githubusercontent.com/118348589/213911857-34e92c84-5988-4ab7-98fc-8aa11cf91366.png)
@@ -94,6 +117,7 @@ DOWN COUNTER
 
 
 TIMING DIGRAMS FOR COUNTER:
+
 UP COUNTER
 
 ![UP Timing diagram](https://user-images.githubusercontent.com/118348589/213911882-cfa1f16f-c4cb-4f38-8497-14944e3b9881.png)
